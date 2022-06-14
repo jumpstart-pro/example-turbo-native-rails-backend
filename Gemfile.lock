@@ -66,6 +66,11 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    apnotic (1.7.0)
+      connection_pool (~> 2)
+      net-http2 (>= 0.18.3, < 2)
     ast (2.4.2)
     bcrypt (3.1.18)
     bindex (0.8.1)
@@ -74,6 +79,7 @@ GEM
     builder (3.2.4)
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
+    connection_pool (2.2.5)
     crass (1.0.6)
     cssbundling-rails (1.1.0)
       railties (>= 6.0.0)
@@ -87,9 +93,24 @@ GEM
       responders
       warden (~> 1.2.3)
     digest (3.1.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
+    ffi (1.15.5)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     globalid (1.0.0)
       activesupport (>= 5.0)
+    http-2 (0.11.0)
+    http (5.0.4)
+      addressable (~> 2.8)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      llhttp-ffi (~> 0.4.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
@@ -97,6 +118,9 @@ GEM
       reline (>= 0.3.0)
     jsbundling-rails (1.0.2)
       railties (>= 6.0.0)
+    llhttp-ffi (0.4.0)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -108,6 +132,8 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.15.0)
     msgpack (1.5.2)
+    net-http2 (0.18.4)
+      http-2 (~> 0.11)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -128,6 +154,9 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
+    noticed (1.5.9)
+      http (>= 4.0.0)
+      rails (>= 5.2.0)
     orm_adapter (0.5.0)
     parallel (1.22.1)
     parser (3.1.2.0)
@@ -138,6 +167,7 @@ GEM
       method_source (~> 1.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -216,6 +246,9 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
     unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -234,11 +267,13 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  apnotic
   bootsnap
   cssbundling-rails
   debug
   devise
   jsbundling-rails
+  noticed
   pg (~> 1.1)
   pry-rails
   puma (~> 5.0)

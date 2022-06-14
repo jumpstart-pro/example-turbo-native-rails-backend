@@ -45,6 +45,12 @@ gem "bootsnap", require: false
 # User authentication [https://github.com/heartcombo/devise]
 gem "devise"
 
+# Notifications [https://github.com/excid3/noticed]
+gem "noticed"
+
+# APNS integration for push notifications on iOS [https://github.com/ostinelli/apnotic]
+gem "apnotic"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
