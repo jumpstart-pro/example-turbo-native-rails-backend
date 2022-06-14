@@ -1,0 +1,10 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">Editing post</h1>
+
+  <%= render "form", post: @post %>
+
+  <div class="flex space-x-2 mt-8">
+    <%= link_to "Show", post_path(@post), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "All posts", posts_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>

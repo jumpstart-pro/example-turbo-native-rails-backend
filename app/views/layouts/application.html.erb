@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TurboNativeBackend</title>
+    <title>Turbo Native backend</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="max-w-5xl mx-auto my-4 md:my-16 px-4">
     <%= yield %>
   </body>
 </html>
