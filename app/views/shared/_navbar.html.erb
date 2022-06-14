@@ -4,6 +4,15 @@
       <div class="sm:ml-6 sm:flex sm:space-x-8">
         <%= link_to "Posts", posts_path, class: "text-gray-900 inline-flex items-center px-3 py-2 text-sm font-medium" %>
       </div>
+
+      <div class="sm:ml-6 sm:flex sm:items-center">
+        <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "text-gray-900 inline-flex items-center px-3 py-2 text-sm font-medium" %>
+        <% else %>
+          <%= link_to "Sign in", user_session_path, class: "text-gray-900 inline-flex items-center px-3 py-2 text-sm font-medium" %>
+          <%= link_to "Register", new_user_registration_path, class: "text-gray-900 inline-flex items-center px-3 py-2 text-sm font-medium" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </nav>
