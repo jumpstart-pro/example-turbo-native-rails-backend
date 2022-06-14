@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_secure_token :authentication_token
 
+  has_many :notification_tokens
+
   def self.valid_credentials?(email, password)
     user = find_by(email:)
     user&.valid_password?(password) ? user : nil
