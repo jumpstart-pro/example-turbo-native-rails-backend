@@ -49,7 +49,10 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
 
-  # No configuration style guide and linter.
+  # Alternative debugger [https://github.com/pry/pry]
+  gem "pry-rails"
+
+  # No configuration style guide and linter [https://github.com/testdouble/standard]
   gem "standard"
 end
 
