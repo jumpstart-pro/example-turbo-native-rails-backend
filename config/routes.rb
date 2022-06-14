@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resource :auth, only: :create
+    end
+  end
+
   namespace :turbo do
     namespace :ios do
       resource :path_configuration, only: :show

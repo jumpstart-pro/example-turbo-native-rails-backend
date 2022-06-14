@@ -1,0 +1,22 @@
+module API
+  module V1
+    class AuthsController < ApplicationController
+      skip_before_action :verify_authenticity_token
+
+      def create
+        if (user = User.valid_credentials?(params[:email], params[:password]))
+          sign_in user
+          render json: {token: user.authentication_token}
+        else
+          render json: {error: error_message}, status: :unauthorized
+        end
+      end
+
+      private
+
+      def error_message
+        I18n.t("devise.failure.invalid", authentication_keys: :email)
+      end
+    end
+  end
+end
