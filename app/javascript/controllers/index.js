@@ -4,5 +4,5 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import TurboNative__SignOutController from "./turbo_native/sign_out_controller.js"
+application.register("turbo-native--sign-out", TurboNative__SignOutController)

@@ -12,6 +12,11 @@ module API
         end
       end
 
+      def destroy
+        sign_out(current_user)
+        render json: {}
+      end
+
       private
 
       def error_message
