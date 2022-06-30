@@ -12,7 +12,7 @@ Creating, updating, or deleting blog posts requires you to be signed in.
 
 ## Installation
 
-To run the perform the following:
+To run the example, perform the following:
 
  * Clone the repo
  * run `bundle install`
@@ -21,7 +21,7 @@ To run the perform the following:
  * run rails db:migrate
  * run `bin/dev` 
    * This will install foreman the first time if you dont have it already installed. If this is the case you will need to run `bin/dev` again
- * Visit `localhost:3000` in your browser, app should be running
+ * Visit `localhost:3000` in your browser, app should be running  
 
 ## Path Configuration
 
