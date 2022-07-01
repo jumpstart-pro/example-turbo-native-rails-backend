@@ -9,6 +9,7 @@ class NewPostNotification < ApplicationNotification
   deliver_by :database
   deliver_by :ios, format: :ios_format, development: :development?
 
+
   param :post
 
   def message
