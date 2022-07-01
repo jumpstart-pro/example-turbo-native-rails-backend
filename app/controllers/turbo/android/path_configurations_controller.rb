@@ -50,7 +50,7 @@ module Turbo
                 context: "modal"
               }
             },
-            # Needs a /api/v1/users_controller.rb for auth if you want native sign up
+            # TODO: Needs a /api/v1/users_controller.rb for registration to work
             # {
             #   patterns: ["/users/sign_up"],
             #   properties: {

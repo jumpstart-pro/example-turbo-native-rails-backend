@@ -22,14 +22,15 @@ module Turbo
                 presentation: "modal"
               }
             },
-            {
-              patterns: [
-                "/users/sign_up"
-              ],
-              properties: {
-                flow: "registration"
-              }
-            },
+            # Needs a /api/v1/users_controller.rb for auth if you want native sign up
+            # {
+            #   patterns: [
+            #     "/users/sign_up"
+            #   ],
+            #   properties: {
+            #     flow: "registration"
+            #   }
+            # },
             {
               patterns: [
                 "/users/sign_in"
