@@ -49,15 +49,7 @@ module Turbo
                 uri: "turbo://fragment/users/sign_in",
                 context: "modal"
               }
-            },
-            # TODO: Needs a /api/v1/users_controller.rb for registration to work
-            # {
-            #   patterns: ["/users/sign_up"],
-            #   properties: {
-            #     uri: "turbo://fragment/users/sign_up",
-            #     context: "modal"
-            #   }
-            # }
+            }
           ]
         }
       end

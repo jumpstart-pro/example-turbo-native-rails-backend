@@ -22,15 +22,6 @@ module Turbo
                 presentation: "modal"
               }
             },
-            # TODO: Needs a /api/v1/users_controller.rb for registration to work
-            # {
-            #   patterns: [
-            #     "/users/sign_up"
-            #   ],
-            #   properties: {
-            #     flow: "registration"
-            #   }
-            # },
             {
               patterns: [
                 "/users/sign_in"
