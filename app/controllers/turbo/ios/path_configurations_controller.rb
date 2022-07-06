@@ -7,8 +7,13 @@ module Turbo
             tabs: [
               {
                 title: "Home",
-                path: "/",
+                path: root_path,
                 ios_system_image_name: "house"
+              },
+              {
+                title: "Posts",
+                path: posts_path,
+                ios_system_image_name: "square.and.pencil"
               }
             ]
           },
