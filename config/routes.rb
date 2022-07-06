@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resource :site
   resources :posts
 
   namespace :api, defaults: {format: :json} do
@@ -20,5 +21,5 @@ Rails.application.routes.draw do
   end
 
   # Defines the root path route ("/")
-  root "posts#index"
+  root "site#show"
 end
