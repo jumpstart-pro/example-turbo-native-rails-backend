@@ -51,6 +51,9 @@ gem "noticed"
 # APNS integration for push notifications on iOS [https://github.com/ostinelli/apnotic]
 gem "apnotic"
 
+# Render markdown as HTML.
+gem "redcarpet"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

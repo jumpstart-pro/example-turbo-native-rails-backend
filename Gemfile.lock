@@ -202,6 +202,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    redcarpet (3.5.1)
     redis (4.6.0)
     regexp_parser (2.5.0)
     reline (0.3.1)
@@ -278,6 +279,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 5.0)
   rails (~> 7.0.3)
+  redcarpet
   redis (~> 4.0)
   sprockets-rails
   standard

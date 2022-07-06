@@ -1,7 +1,7 @@
 module API
   module V1
     class AuthsController < ApplicationController
-      skip_before_action :authenticate_token!
+      skip_before_action :authenticate_token!, only: [:create]
 
       def create
         if (user = User.valid_credentials?(params[:email], params[:password]))
