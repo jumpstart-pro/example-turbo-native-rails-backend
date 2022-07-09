@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resource :auth, only: [:create, :destroy]
       resources :notification_tokens, only: :create
+      resources :users, only: :create
     end
   end
 
