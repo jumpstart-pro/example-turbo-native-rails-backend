@@ -29,6 +29,14 @@ module Turbo
             },
             {
               patterns: [
+                "/users/sign_up"
+              ],
+              properties: {
+                flow: "registration"
+              }
+            },
+            {
+              patterns: [
                 "/users/sign_in"
               ],
               properties: {

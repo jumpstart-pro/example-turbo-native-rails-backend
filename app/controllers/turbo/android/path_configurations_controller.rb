@@ -44,6 +44,13 @@ module Turbo
               }
             },
             {
+              patterns: ["/users/sign_up"],
+              properties: {
+                uri: "turbo://fragment/users/sign_up",
+                context: "modal"
+              }
+            },
+            {
               patterns: ["/users/sign_in"],
               properties: {
                 uri: "turbo://fragment/users/sign_in",
@@ -56,7 +63,7 @@ module Turbo
 
       private 
 
-        # Provide the name of the icon
+      # Provide the name of the icon
       def svg_icon_path(icon)
         ActionController::Base.helpers.asset_path("icons/#{icon}.svg")
       end
