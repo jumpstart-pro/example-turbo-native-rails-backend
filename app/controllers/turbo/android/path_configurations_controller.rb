@@ -29,7 +29,7 @@ module Turbo
               }
             },
             {
-              patterns: ["^$", "^/$"],
+              patterns: ["^$", "^#{root_path}$"],
               properties: {
                 uri: "turbo://fragment/web/home",
                 presentation: "replace_root"
@@ -44,7 +44,7 @@ module Turbo
               }
             },
             {
-              patterns: ["/users/sign_in"],
+              patterns: [new_user_session_path],
               properties: {
                 uri: "turbo://fragment/users/sign_in",
                 context: "modal"
