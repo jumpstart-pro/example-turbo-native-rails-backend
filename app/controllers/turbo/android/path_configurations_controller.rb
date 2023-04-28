@@ -9,12 +9,12 @@ module Turbo
               {
                 title: "Home",
                 path: root_path,
-                image_url: svg_icon_path("home")
+                icon: "home"
               },
               {
                 title: "Posts",
                 path: posts_path,
-                image_url: svg_icon_path("compose")
+                icon: "announcement"
               }
             ].to_json
           },
@@ -53,14 +53,6 @@ module Turbo
           ]
         }
       end
-
-      private 
-
-        # Provide the name of the icon
-      def svg_icon_path(icon)
-        ActionController::Base.helpers.asset_path("icons/#{icon}.svg")
-      end
-
     end
   end
 end
