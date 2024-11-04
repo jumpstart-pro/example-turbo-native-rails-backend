@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import Bridge from "../../src/turbo_native/bridge"
+import Bridge from "src/turbo_native/bridge"
 
 export default class extends Controller {
   signOut(event) {

@@ -1,5 +1,20 @@
 # frozen_string_literal: true
 
+class TurboFailureApp < Devise::FailureApp
+  # Compatibility for Turbo::Native::Navigation
+  class << self
+    def helper_method(*methods)
+    end
+  end
+
+  include Turbo::Native::Navigation
+
+  # Turbo Native requests that require authentication should return 401s to trigger the login modal
+  def http_auth?
+    hotwire_native_app? || super
+  end
+end
+
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -278,7 +293,7 @@ Devise.setup do |config|
   # change the failure app, you can configure them inside the config.warden block.
   #
   config.warden do |manager|
-    manager.failure_app = Turbo::DeviseFailureApp
+    manager.failure_app = Devise::FailureApp
   end
 
   # ==> Mountable engine configurations
