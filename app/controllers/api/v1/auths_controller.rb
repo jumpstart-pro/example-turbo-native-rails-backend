@@ -4,9 +4,9 @@ module API
       skip_before_action :verify_authenticity_token, only: [:destroy]
 
       def destroy
-        current_user.notification_tokens
+        Current.user.notification_tokens
           .find_by(token: params[:notification_token])&.destroy
-        sign_out(current_user)
+        terminate_session
         render json: {}
       end
     end

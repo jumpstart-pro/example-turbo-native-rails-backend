@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get :login, to: "sessions#new", as: :new_session
+  resource :session, only: [:create, :destroy]
+  get :signup, to: "registrations#new", as: :new_registration
+  resource :registration, only: :create
 
   resource :site
   resources :posts

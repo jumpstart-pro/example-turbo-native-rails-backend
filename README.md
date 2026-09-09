@@ -6,7 +6,7 @@ You can start with this repository as a template for your Rails codebase or copy
 
 ## Overview
 
-The app is a blogging example with limited functionality. You can perform CRUD operation on `Post` objects and sign in/out via Devise.
+The app is a blogging example with limited functionality. You can perform CRUD operation on `Post` objects and sign in/out via Rails 8 authentication.
 
 Creating, updating, or deleting blog posts requires you to be signed in.
 
@@ -15,8 +15,7 @@ Creating, updating, or deleting blog posts requires you to be signed in.
 To run the example, perform the following:
 
  * Clone the repo
- * run `bin/setup`
- * run `bin/rails server`
+ * run `bin/setup` (this also starts the server; pass `--skip-server` to skip that)
  * Visit `localhost:3000` in your browser, app should be running
 
 ## Path Configuration
@@ -33,7 +32,7 @@ See the Jumpstart Pro iOS documentation on more information on more configuratio
 
 The Hotwire Native client uses cookie authentication just like the browser.
 
-Upon successful auth, `after_sign_in_path_for` is set in `ApplicationController` to redirect to `/reset_app` for Hotwire Native apps. This renders an empty HTML template which the app "catches" to reset the state of the app (like tabs and reload the path configuration).
+Upon successful auth, `after_authentication_url` is overridden in the `Authentication` concern to redirect to `/reset_app` for Hotwire Native apps. This renders an empty HTML template which the app "catches" to reset the state of the app (like tabs and reload the path configuration).
 
 ### Signing out
 
@@ -45,7 +44,7 @@ HTML links to sign out are "trapped" via a Stimulus controller to ensure the req
 
 Add a `bridge--notification-token` data attribute to have the app POST the device's notification token to `/api/v1/notification_tokens` (with the user's permission). This is persisted to the `NotificationToken` model and associated with the `User`.
 
-An example push notification is set up powered by [Noticed](https://github.com/excid3/noticed) (and [Apnotic](https://github.com/ostinelli/apnotic)). See `NewPostNotification`.
+An example push notification is set up powered by [Noticed](https://github.com/excid3/noticed) (and [Apnotic](https://github.com/ostinelli/apnotic)). See `NewPostNotifier`.
 
 To get this working in your app you will need to follow a few steps.
 

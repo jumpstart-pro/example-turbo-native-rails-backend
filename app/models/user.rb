@@ -1,11 +1,10 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :rememberable, :validatable
+  has_secure_password
+  has_many :sessions, dependent: :destroy
 
   has_many :notification_tokens
-  has_many :notifications, as: :recipient
+  has_many :notifications, as: :recipient, dependent: :destroy, class_name: "Noticed::Notification"
 
-  def self.valid_credentials?(email, password)
-    user = find_by(email:)
-    user&.valid_password?(password) ? user : nil
-  end
+  normalizes :email_address, with: ->(e) { e.strip.downcase }
+  validates :email_address, presence: true, uniqueness: true
 end

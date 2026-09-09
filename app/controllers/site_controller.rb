@@ -1,4 +1,6 @@
 class SiteController < ApplicationController
+  allow_unauthenticated_access
+
   def show
     @readme = renderer.render(File.read(file))
   end

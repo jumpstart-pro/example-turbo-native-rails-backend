@@ -1,4 +1,6 @@
 class Hotwire::Android::PathConfigurationsController < ApplicationController
+  allow_unauthenticated_access
+
   def show
     render json: {
       settings: {
@@ -42,7 +44,7 @@ class Hotwire::Android::PathConfigurationsController < ApplicationController
           }
         },
         {
-          patterns: [new_user_session_path],
+          patterns: [new_session_path],
           properties: {
             uri: "hotwire://fragment/users/sign_in",
             context: "modal"

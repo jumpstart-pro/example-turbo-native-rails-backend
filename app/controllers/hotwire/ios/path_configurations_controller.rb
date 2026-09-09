@@ -1,4 +1,6 @@
 class Hotwire::Ios::PathConfigurationsController < ApplicationController
+  allow_unauthenticated_access
+
   def show
     render json: {
       settings: {
@@ -20,8 +22,8 @@ class Hotwire::Ios::PathConfigurationsController < ApplicationController
           patterns: [
             "/new$",
             "/edit$",
-            "/users/sign_up",
-            "/users/sign_in"
+            "/signup",
+            "/login"
           ],
           properties: {
             context: "modal"
